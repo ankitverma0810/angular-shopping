@@ -1,0 +1,36 @@
+footer {
+	.footer-links-container {
+		background-color: lighten($black, 5%);
+		padding: 2.5em 0;
+
+		h3 {
+			color: #fff;
+			font-size: 1.5em;
+			font-weight: 500;
+			text-transform: uppercase;
+			padding: 0 0 .7em;
+		}
+
+		ul {
+			li {
+				a {
+					color: darken(#fff, 30%);
+					padding: .2em 0;
+					&:hover {
+						background: none;
+					}
+				}
+			}
+		}
+	}
+
+	.copyright-container {
+		background-color: $black;
+
+		p {
+			font-size: 1.2em;
+			color: #fff;
+			margin: 1em 0;
+		}
+	}
+}

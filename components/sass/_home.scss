@@ -1,0 +1,60 @@
+.home-page-container {
+	h2 {
+		margin: 1.2em 0;
+		text-transform: uppercase;
+	}
+
+	.new-released-container {
+		p {
+			margin-bottom: 2em;
+			font-size: 1.1em;
+			font-weight: 500;
+
+			a {
+				color: $black;
+				text-decoration: none;
+
+				&:hover {
+					color: $orange;
+				}
+			}
+		}
+	}
+	
+	.thumbnail {
+		border: 0;
+		border-radius: 0;
+		position: relative;
+		padding: 0;
+		margin-bttom: .75em;
+
+		img {
+			width: 100%;
+		}
+
+		.caption {
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			position: absolute;
+			padding: 0;
+			background-color: rgba(0,0,0,.5);
+
+			h3 {
+				color: #fff;
+				font-size: 2em;
+			}
+		}
+	}
+
+	.brands-container {
+		padding: 3em 0;
+
+		.brands {
+			padding: 0;
+			border: solid 1px #ccc;
+			border-right: 0px;
+		}
+	}
+}

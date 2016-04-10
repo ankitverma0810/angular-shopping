@@ -1,0 +1,42 @@
+#carousel-home {
+	.carousel-inner {
+		max-height: 500px;
+
+		.item {
+			img {
+				width: 100%;
+			}
+
+			.carousel-caption {
+				top: 8%;
+				text-shadow: none;
+				text-align: left;
+				left: 0;
+				right: 0;
+
+				.carousel-caption-text {
+					max-width: 500px;
+				}
+
+				h2 {
+					font-size: 3.2em;
+				}
+
+				p {
+					font-size: 1.2em;
+				}
+
+				a.btn {
+					background-color: $orange;
+					color: #fff;
+					font-size: 1.2em;
+					border: 0px;
+				}
+			}
+		}
+	}
+
+	.carousel-control {
+		width: 3%;
+	}
+}

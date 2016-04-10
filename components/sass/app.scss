@@ -1,0 +1,12 @@
+@import "compass";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap.scss";
+
+//components
+@import "colors";
+@import "main";
+@import "header";
+@import "footer";
+@import "carousel";
+
+//pages
+@import "home";

@@ -29,6 +29,7 @@ var paths = {
 		DEFAULT.appDir + '/scripts/**/*.js'
 	],
 	sass: [DEFAULT.appDir + '/sass/*.scss'],
+	fonts: ['builds/development/fonts/**/*.*'],
 	views: {
 		main: DEFAULT.outputDir + 'index.html',
 		files: [DEFAULT.outputDir + 'views/**/*.html']
@@ -76,6 +77,15 @@ gulp.task('images', function() {
 		.pipe(browserSync.stream());
 });
 
+//fonts task
+gulp.task('fonts', function() {
+	gulp.src('bower_components/bootstrap-sass/assets/fonts/bootstrap/*.*')
+		.pipe(gulp.dest('builds/development/fonts/bootstrap'));
+
+	gulp.src(paths.fonts)
+		.pipe(gulpif( DEFAULT.env === 'production', gulp.dest(DEFAULT.outputDir+'fonts') ));
+});
+
 //app serve and watch task
 gulp.task('serve', function() {
 	browserSync.init({
@@ -92,7 +102,6 @@ gulp.task('serve', function() {
 	gulp.watch('builds/development/**/*.html', ['html']);
 	gulp.watch('builds/development/images/**/*.*', ['images']);
 });
-
 
 //test and e2e testing task starts from here
 gulp.task('serve-test', function() {
@@ -140,4 +149,4 @@ gulp.task('protractor', ['webdriver_update', 'serve'], function(done) {
 });
 
 //default task
-gulp.task('default', ['html', 'js', 'compass', 'images', 'serve']);
+gulp.task('default', ['fonts', 'html', 'js', 'compass', 'images', 'serve']);

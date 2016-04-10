@@ -1,0 +1,80 @@
+header {
+	.top-bar-container {
+		padding: 1em 0;
+		background-color: $black;
+
+		.search-container {
+			.form-group {
+				input {
+					border-radius: 0px;
+					border: 0px;
+					margin: 0px;
+					box-shadow: 0px;
+				}
+			}
+
+			button {
+				border-radius: 0px;
+				border: 0px;
+				height: 34px;
+				background-color: #c7c7c7;
+				color: $black;
+				font-weight: 700;
+			}
+		}
+
+		.header-links {
+			ul {
+				li {
+					a {
+						color: #fff;
+						font-size: 1.1em;
+						margin: 0 2em 0 0;
+						padding: 0;
+						&:hover {
+							background-color: $black;
+						}
+					}
+
+					&.simpleCart_total {
+						font-weight: 500;
+					}
+
+					&.empty-cart {
+						font-size: 0.875em;
+					}
+				}
+			}
+		}
+	}
+
+	.nav-container {
+		border: solid 1px $black;
+		padding: 1em 0;
+
+		ul {
+			li {
+				font-size: 1.1em;
+				font-weight: 500;
+				a {
+					color: $black;
+					padding: 1em 1.8em;
+					&:hover {
+						background-color: #fff;
+					}
+				}
+
+				&.active {
+					a {
+						color: $orange;
+						background-color: #fff;
+						&:hover {
+							background-color: #fff;
+							color: $black;
+						}
+					}
+				}
+			}
+		}
+	}
+}
