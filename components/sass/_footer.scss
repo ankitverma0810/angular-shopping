@@ -13,12 +13,69 @@ footer {
 
 		ul {
 			li {
+				font-size: 1.1em;
 				a {
 					color: darken(#fff, 30%);
 					padding: .2em 0;
-					&:hover {
-						background: none;
+
+					i {
+						width: 24px;
+						height: 24px;
+						background-image: url('../images/img-sprite.png');
+						background-repeat: no-repeat;
+						display: block;
+						margin: 0 5px 0 0;
+
+						&.facebook {
+							background-position: -9px -14px;
+						}
+
+						&.twitter {
+							background-position: -43px -14px;
+						}
+
+						&.rss {
+							background-position: -77px -14px;
+						}
+
+						&.gmail {
+							background-position: -110px -14px;
+						}
 					}
+
+					&:hover,
+					&:focus {
+						background: none;
+						color: $orange;
+					}
+				}
+			}
+		}
+
+		p {
+			font-size: 1.2em;
+			color: darken(#fff, 30%);
+		}
+
+		.navbar-form {
+			padding: 10px 0px;
+
+			input {
+				border-radius: 0px;
+				border: 0px;
+				height: 34px;
+			}
+
+			.btn {
+				border-radius: 0px;
+				border: 0px;
+				height: 34px;
+				background-color: $orange;
+				color: #fff;
+
+				&:hover {
+					background-color: #fff;
+					color: $orange;
 				}
 			}
 		}

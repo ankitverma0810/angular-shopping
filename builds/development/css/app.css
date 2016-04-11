@@ -7341,6 +7341,17 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+h2 {
+  margin: 1.2em 0;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 500;
+}
+
+.inner-container {
+  margin-bottom: 4em;
+}
+
 header .top-bar-container {
   padding: 1em 0;
   background-color: #000;
@@ -7375,7 +7386,7 @@ header .top-bar-container .header-links ul li.empty-cart {
   font-size: 0.875em;
 }
 header .nav-container {
-  border: solid 1px #000;
+  border-bottom: solid 1px #000;
   padding: 1em 0;
 }
 header .nav-container ul li {
@@ -7409,12 +7420,59 @@ footer .footer-links-container h3 {
   text-transform: uppercase;
   padding: 0 0 .7em;
 }
+footer .footer-links-container ul li {
+  font-size: 1.1em;
+}
 footer .footer-links-container ul li a {
   color: #b3b3b3;
   padding: .2em 0;
 }
-footer .footer-links-container ul li a:hover {
+footer .footer-links-container ul li a i {
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/img-sprite.png");
+  background-repeat: no-repeat;
+  display: block;
+  margin: 0 5px 0 0;
+}
+footer .footer-links-container ul li a i.facebook {
+  background-position: -9px -14px;
+}
+footer .footer-links-container ul li a i.twitter {
+  background-position: -43px -14px;
+}
+footer .footer-links-container ul li a i.rss {
+  background-position: -77px -14px;
+}
+footer .footer-links-container ul li a i.gmail {
+  background-position: -110px -14px;
+}
+footer .footer-links-container ul li a:hover, footer .footer-links-container ul li a:focus {
   background: none;
+  color: #EF5F21;
+}
+footer .footer-links-container p {
+  font-size: 1.2em;
+  color: #b3b3b3;
+}
+footer .footer-links-container .navbar-form {
+  padding: 10px 0px;
+}
+footer .footer-links-container .navbar-form input {
+  border-radius: 0px;
+  border: 0px;
+  height: 34px;
+}
+footer .footer-links-container .navbar-form .btn {
+  border-radius: 0px;
+  border: 0px;
+  height: 34px;
+  background-color: #EF5F21;
+  color: #fff;
+}
+footer .footer-links-container .navbar-form .btn:hover {
+  background-color: #fff;
+  color: #EF5F21;
 }
 footer .copyright-container {
   background-color: #000;
@@ -7457,10 +7515,6 @@ footer .copyright-container p {
   width: 3%;
 }
 
-.home-page-container h2 {
-  margin: 1.2em 0;
-  text-transform: uppercase;
-}
 .home-page-container .new-released-container p {
   margin-bottom: 2em;
   font-size: 1.1em;
@@ -7478,7 +7532,7 @@ footer .copyright-container p {
   border-radius: 0;
   position: relative;
   padding: 0;
-  margin-bttom: .75em;
+  margin-bottom: 2em;
 }
 .home-page-container .thumbnail img {
   width: 100%;
