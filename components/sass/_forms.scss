@@ -1,0 +1,48 @@
+.login-container {
+	.form-group {
+		margin-bottom: 1.5em;
+
+		label {
+			font-size: 1.1em;
+			padding: 0 0 0.5em;
+			color: darken(#fff, 35%);
+			font-weight: normal;
+		}
+
+		input {
+			border-radius: 0px;
+			height: 45px;
+			border-color: lighten($black, 50%);
+		}
+	}
+
+	.checkbox {
+		label {
+			font-size: 1.1em;
+			color: $orange;
+			font-weight: 500;
+			text-transform: uppercase;
+		}
+	}
+
+	.thumbnail {
+		border-radius: 0px;
+		padding: 0px;
+		border: 0px;
+
+		.caption {
+			background-color: $orange;
+			text-align: center;
+
+			h4 {
+				color: #fff;
+				font-size: 1.1em;
+				margin: 0px;
+			}
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

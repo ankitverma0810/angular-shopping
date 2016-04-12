@@ -7342,14 +7342,27 @@ body {
 }
 
 h2 {
-  margin: 1.2em 0;
-  text-transform: uppercase;
+  margin: 1em 0;
   text-align: center;
   font-weight: 500;
+  font-size: 3em;
 }
 
 .inner-container {
   margin-bottom: 4em;
+}
+
+.orange-btn {
+  background-color: #EF5F21;
+  color: #fff;
+  border: 0px;
+  padding: .7em 2em;
+  border-radius: 0px;
+  font-size: 1.1em;
+}
+.orange-btn:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 header .top-bar-container {
@@ -7549,6 +7562,15 @@ footer .copyright-container p {
 .home-page-container .thumbnail .caption h3 {
   color: #fff;
   font-size: 2em;
+  display: table;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+.home-page-container .thumbnail .caption h3 span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
 }
 .home-page-container .brands-container {
   padding: 3em 0;
@@ -7557,4 +7579,42 @@ footer .copyright-container p {
   padding: 0;
   border: solid 1px #ccc;
   border-right: 0px;
+}
+
+.login-container .form-group {
+  margin-bottom: 1.5em;
+}
+.login-container .form-group label {
+  font-size: 1.1em;
+  padding: 0 0 0.5em;
+  color: #a6a6a6;
+  font-weight: normal;
+}
+.login-container .form-group input {
+  border-radius: 0px;
+  height: 45px;
+  border-color: gray;
+}
+.login-container .checkbox label {
+  font-size: 1.1em;
+  color: #EF5F21;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.login-container .thumbnail {
+  border-radius: 0px;
+  padding: 0px;
+  border: 0px;
+}
+.login-container .thumbnail .caption {
+  background-color: #EF5F21;
+  text-align: center;
+}
+.login-container .thumbnail .caption h4 {
+  color: #fff;
+  font-size: 1.1em;
+  margin: 0px;
+}
+.login-container .thumbnail:hover {
+  text-decoration: none;
 }

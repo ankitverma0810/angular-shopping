@@ -3,12 +3,26 @@ body {
 }
 
 h2 {
-	margin: 1.2em 0;
-	text-transform: uppercase;
+	margin: 1em 0;
 	text-align: center;
 	font-weight: 500;
+	font-size: 3em;
 }
 
 .inner-container {
 	margin-bottom: 4em;
+}
+
+.orange-btn {
+	background-color: $orange;
+	color: #fff;
+	border: 0px;
+	padding: .7em 2em;
+	border-radius: 0px;
+	font-size: 1.1em;
+
+	&:hover {
+		background-color: $black;
+		color: #fff;
+	}
 }
