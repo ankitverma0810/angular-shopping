@@ -8,6 +8,7 @@ var gulp = require('gulp'),
 	imagemin = require('gulp-imagemin'),
 	pngcrush = require('imagemin-pngcrush'),
 	concat = require('gulp-concat'),
+	sourcemaps = require('gulp-sourcemaps'),
 	karma = require('karma').Server,
 	protractor = require('gulp-protractor').protractor,
 	webdriver_update = require('gulp-protractor').webdriver_update;
@@ -22,10 +23,17 @@ DEFAULT.outputDir = (DEFAULT.env === 'development') ?  "builds/development/" : "
 
 //path of all the files
 var paths = {
-	scripts: [
+	vendors: [
 		'bower_components/angular/angular.js',
+		'bower_components/angular-cookies/angular-cookies.js',
+		'bower_components/angular-sanitize/angular-sanitize.js',
+		'bower_components/angular-ui-router/release/angular-ui-router.js',
+		'bower_components/angular-bootstrap/ui-bootstrap.js',
 		'bower_components/jquery/dist/jquery.js',
-		'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
+		'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js'
+	],
+	scripts: [
+		DEFAULT.appDir + '/scripts/config.js',
 		DEFAULT.appDir + '/scripts/**/*.js'
 	],
 	sass: [DEFAULT.appDir + '/sass/*.scss'],
@@ -36,11 +44,22 @@ var paths = {
 	}
 };
 
-//Javascript task
-gulp.task('js', function() {
-	gulp.src(paths.scripts)
-		.pipe(concat('main.js'))
+//vendors task
+gulp.task('vendors', function() {
+	gulp.src(paths.vendors)
+		.pipe(concat('vendors.js'))
 		.pipe(gulpif(DEFAULT.env === 'production', uglify()))
+		.pipe(gulp.dest(DEFAULT.outputDir+'scripts'))
+		.pipe(browserSync.stream());
+});
+
+//Javascript task
+gulp.task('js', ['vendors'], function() {
+	gulp.src(paths.scripts)
+		.pipe(sourcemaps.init()) //to generate source map for all JS file for debugging
+		.pipe(concat('main.js')) //concat task
+		.pipe(gulpif(DEFAULT.env === 'production', uglify())) //uglify
+		.pipe(sourcemaps.write()) 
 		.pipe(gulp.dest(DEFAULT.outputDir+'scripts'))
 		.pipe(browserSync.stream());
 });
@@ -49,6 +68,8 @@ gulp.task('js', function() {
 gulp.task('compass', function() {
 	gulp.src(paths.sass)
 		.pipe(compass({
+			sourcemap: true,
+			css: DEFAULT.outputDir+'css',
 			sass: DEFAULT.appDir + '/sass',
 			image: DEFAULT.outputDir+'images',
 			style: DEFAULT.sassStyle

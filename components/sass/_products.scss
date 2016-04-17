@@ -1,0 +1,19 @@
+.products-container {
+	.thumbnail {
+		border: 0px;
+		border-radius: 0px;
+
+		.caption {
+			padding: 10px 0px;
+
+			p {
+				font-size: 1em;
+				color: darken(#fff, 40%);
+			}
+
+			span.glyphicon {
+				padding-right: 5px
+			}
+		}
+	}
+}

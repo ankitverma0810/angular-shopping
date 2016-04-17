@@ -18,68 +18,7 @@
         <![endif]-->
     </head>
     <body>
-        <header>
-            <div class="top-bar-container">
-                <div class="container">
-                    <div class="row clearfix">
-                        <div class="col-md-3 search-container">
-                            <div class="row">
-                                <form class="navbar-form" role="search">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Search">
-                                    </div>
-                                    <button type="submit" class="btn btn-default">Go</button>
-                                </form>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 header-links pull-right">
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <ul class="nav nav-pills">
-                                        <li><a href="#">Login</a></li>
-                                        <li><a href="#">Register</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li class="simpleCart_total">
-                                            <a href="#">
-                                                $190.00 (<span id="simpleCart_quantity">2</span> items) <img src="images/cart.png" alt="">
-                                            </a>
-                                        </li>
-                                        <li class="empty-cart"><a href="#">Empty Cart</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="nav-container">
-                <div class="container">
-                    <div class="row">
-                        <div class="logo col-md-3">
-                            <a href="#"><img src="images/logo.png" alt=""></a>
-                        </div>
-
-                        <nav class="col-md-9">
-                            <ul class="nav nav-pills pull-right">
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="#">Men</a></li>
-                                <li><a href="#">Women</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </header>
+        <header data-ng-include="'views/header.html'"></header>
 
         <div class="carousel-container">
             <div id="carousel-home" class="carousel slide" data-ride="carousel">
@@ -256,55 +195,8 @@
             </div>
         </div>
 
-        <footer>
-            <div class="footer-links-container clearfix">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h3>More Info</h3>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">How to order</a></li>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Location</a></li>
-                                <li><a href="#">Shipping</a></li>
-                                <li><a href="#">Membership</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-md-4">
-                            <h3>Contact Us</h3>
-                            <p>Contrary to popular belief<br>
-                            The standard chunk<br>
-                            office: +12 34 995 0792</p>
-
-                            <ul class="nav nav-pills">
-                                <li><a href="#"><i class="facebook"></i></a></li>
-                                <li><a href="#"><i class="twitter"></i></a></li>
-                                <li><a href="#"><i class="rss"></i></a></li>
-                                <li><a href="#"><i class="gmail"></i></a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-md-4">
-                            <h3>Newsletter</h3>
-                            <p>Sign Up to get all news update and promo</p>
-                            <form class="navbar-form" role="search">
-                                <div class="form-group">
-                                    <input type="text" class="form-control">
-                                </div>
-                                <button type="submit" class="btn btn-default">Sign up</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="copyright-container">
-                <div class="container">
-                    <p class="text-center">&copy; 2016 New store All Rights Reserved</p>
-                </div>
-            </div>
-        </footer>
+        <footer data-ng-include="'views/footer.html'"></footer>
+        <script src="scripts/vendors.js"></script>
         <script src="scripts/main.js"></script>
     </body>
 </html>

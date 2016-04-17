@@ -1,0 +1,120 @@
+.checkout-container {
+	.product-options {
+		padding-top: 3em;
+
+		.product-info {
+			h4 {
+				padding-bottom: .5em;
+				a {
+					color: $black;
+				}
+			}
+
+			p {
+				font-size: .85em;
+			}
+
+			span.glyphicon {
+				background-color: $orange;
+				color: #fff;
+				padding: .4em;
+				cursor: pointer;
+			}
+
+			.purchasing-info {
+				p {
+					display: inline-block;
+					padding-right: 4em;
+				}
+			}
+		}
+
+		.product-delivery {
+			padding-top: 2em;
+
+			p {
+				color: darken(#fff, 40%);
+
+				&.delivery {
+					@media(min-width: 768px) {
+						text-align: right;
+					}
+				}
+			}
+		}
+	}
+}
+
+.checkout-sidebar {
+	h4 {
+		font-size: 1.2em;
+		padding-bottom: 1em;
+	}
+
+	table {
+		margin: 15px 0px 25px;
+
+		td.price {
+			font-size: 1.2em;
+			font-weight: 500;
+		}
+
+		thead {
+			fon-size: 1.2em;
+			tr {
+				td {
+					padding: 10px 0px;
+				}
+			}
+		}
+
+		tbody {
+			tr {
+				td {
+					border: 0;
+					padding: 1px 0px;
+					font-size: 0.85em;
+				}
+
+				&:last-child {
+					td {
+						padding: 1px 0px 10px;
+					}
+				}
+			}
+		}
+
+		tfoot {
+			fon-size: 1.2em;
+			tr {
+				td {
+					padding: 10px 0px;
+				}
+			}
+		}
+	}
+
+	.coupons-container {
+		padding: 40px 0px;
+
+		p {
+			a {
+				color: #000;
+			}
+		}
+
+		.coupon-box {
+			p {
+				color: darken(#fff, 40%);
+				line-height: 2.3em;
+				font-weight: 500;
+				font-size: .9em;
+			}
+
+			.btn {
+				font-size: 1em;
+				padding: .4em .7em;
+			} 
+		}
+	}
+}

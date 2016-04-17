@@ -1,0 +1,55 @@
+.sidebar {
+	.sidebar-section {
+		margin: 0 0 2em; 
+
+		.sidebar-heading {
+			border-bottom: solid 1px #000;
+			margin-bottom: 1em;
+
+			h3 {
+				border-bottom: solid 1px #000;
+				display: inline-block;
+			}
+		}
+
+		ul.nav {
+			li {
+				font-size: 1.1em; 
+
+				a {
+					padding: .2em 0;
+					color: #000;
+
+					&:hover,
+					&:focus {
+						background: none;
+						color: $orange;
+					}
+				}
+
+				.dropdown-menu {
+					position: relative;
+					float: none;
+					border: 0;
+					border-radius: 0;
+					box-shadow: none;
+					padding: 7px 20px;
+				}
+			}
+		}
+
+		.media {
+			.media-body {
+				a {
+					color: $orange;
+					font-size: 1.7em;
+
+					&:hover,
+					&:focus {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
