@@ -1,0 +1,115 @@
+.admin-container {
+	position: relative;
+
+	.login-container {
+		max-width: 400px;
+		padding-top: 75px;
+
+		h3 {
+			margin-bottom: 20px;
+		}
+
+		hr {
+			margin-bottom: 10px;
+		}
+
+		a {
+			color: $black;
+		}
+
+		.register-link {
+			padding-bottom: 60px;
+		}
+
+		.logo {
+			padding-bottom: 25px;
+		}
+	}
+
+	.left-section {
+		background-color: $black;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 280px;
+		z-index: 999;
+
+		h2 {
+			color: #fff;
+			padding: 30px 13px;
+			text-transform: uppercase;
+			font-size: 2.5em;
+			margin: 0px;
+			font-weight: 700;
+		}
+
+		ul {
+			li {
+				border-bottom: solid 1px darken(#fff, 80%);
+
+				&.active {
+					a {
+						color: #fff;
+						background: none;
+
+						&:hover,
+						&:focus {
+							background: none;
+						}
+					}
+				}
+
+				a {
+					color: darken(#fff, 25%);
+
+					span.glyphicon-th {
+						padding-right: 5px;
+					}
+
+					span.glyphicon-menu-right,
+					span.glyphicon-menu-down {
+						float: right;
+						font-size: 11px;
+					}
+
+					&:hover,
+					&:focus {
+						background: none;
+					}
+				}
+
+				.dropdown-menu {
+					position: relative;
+					float: none;
+					border: 0;
+					border-radius: 0;
+					box-shadow: none;
+					padding: 0px;
+					margin: 0px;
+					background-color: lighten($black, 12%);
+
+					li {
+						&:last-child {
+							border-bottom: 0;
+						}
+
+						a {
+							padding: 10px 37px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.right-section {
+		position: relative;
+		padding-left: 280px;
+		min-height: 700px;
+		float: left;
+		width: 100%;
+		z-index: 99;
+	}
+}

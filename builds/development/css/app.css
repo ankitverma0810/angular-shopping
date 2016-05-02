@@ -7512,6 +7512,9 @@ footer .copyright-container p {
   margin: 1em 0;
 }
 
+#carousel-home {
+  margin-bottom: 30px;
+}
 #carousel-home .carousel-inner {
   max-height: 500px;
 }
@@ -7769,3 +7772,94 @@ footer .copyright-container p {
   font-size: 1em;
   padding: .4em .7em;
 }
+
+.admin-container {
+  position: relative;
+}
+.admin-container .login-container {
+  max-width: 400px;
+  padding-top: 75px;
+}
+.admin-container .login-container h3 {
+  margin-bottom: 20px;
+}
+.admin-container .login-container hr {
+  margin-bottom: 10px;
+}
+.admin-container .login-container a {
+  color: #000;
+}
+.admin-container .login-container .register-link {
+  padding-bottom: 60px;
+}
+.admin-container .login-container .logo {
+  padding-bottom: 25px;
+}
+.admin-container .left-section {
+  background-color: #000;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 280px;
+  z-index: 999;
+}
+.admin-container .left-section h2 {
+  color: #fff;
+  padding: 30px 13px;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  margin: 0px;
+  font-weight: 700;
+}
+.admin-container .left-section ul li {
+  border-bottom: solid 1px #333333;
+}
+.admin-container .left-section ul li.active a {
+  color: #fff;
+  background: none;
+}
+.admin-container .left-section ul li.active a:hover, .admin-container .left-section ul li.active a:focus {
+  background: none;
+}
+.admin-container .left-section ul li a {
+  color: #bfbfbf;
+}
+.admin-container .left-section ul li a span.glyphicon-th {
+  padding-right: 5px;
+}
+.admin-container .left-section ul li a span.glyphicon-menu-right,
+.admin-container .left-section ul li a span.glyphicon-menu-down {
+  float: right;
+  font-size: 11px;
+}
+.admin-container .left-section ul li a:hover, .admin-container .left-section ul li a:focus {
+  background: none;
+}
+.admin-container .left-section ul li .dropdown-menu {
+  position: relative;
+  float: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0px;
+  margin: 0px;
+  background-color: #1f1f1f;
+}
+.admin-container .left-section ul li .dropdown-menu li:last-child {
+  border-bottom: 0;
+}
+.admin-container .left-section ul li .dropdown-menu li a {
+  padding: 10px 37px;
+}
+.admin-container .right-section {
+  position: relative;
+  padding-left: 280px;
+  min-height: 700px;
+  float: left;
+  width: 100%;
+  z-index: 99;
+}
+
+/*# sourceMappingURL=app.css.map */

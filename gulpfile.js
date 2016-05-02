@@ -2,7 +2,10 @@ var gulp = require('gulp'),
 	gutil = require('gulp-util'),
 	browserify = require('gulp-browserify'),
 	compass = require('gulp-compass'),
+	minifyCSS = require('gulp-minify-css'),
 	browserSync = require('browser-sync'),
+	modRewrite = require('connect-modrewrite'),
+	proxyMiddleware = require('proxy-middleware'),
 	gulpif = require('gulp-if'),
 	uglify = require('gulp-uglify'),
 	imagemin = require('gulp-imagemin'),
@@ -34,6 +37,8 @@ var paths = {
 	],
 	scripts: [
 		DEFAULT.appDir + '/scripts/config.js',
+		DEFAULT.appDir + '/scripts/app.js',
+		DEFAULT.appDir + '/scripts/routes/*.js',
 		DEFAULT.appDir + '/scripts/**/*.js'
 	],
 	sass: [DEFAULT.appDir + '/sass/*.scss'],
@@ -47,8 +52,10 @@ var paths = {
 //vendors task
 gulp.task('vendors', function() {
 	gulp.src(paths.vendors)
+		.pipe(sourcemaps.init()) //to generate source map for all JS file for debugging
 		.pipe(concat('vendors.js'))
 		.pipe(gulpif(DEFAULT.env === 'production', uglify()))
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(DEFAULT.outputDir+'scripts'))
 		.pipe(browserSync.stream());
 });
@@ -68,13 +75,13 @@ gulp.task('js', ['vendors'], function() {
 gulp.task('compass', function() {
 	gulp.src(paths.sass)
 		.pipe(compass({
-			sourcemap: true,
+			config_file: './config.rb',
 			css: DEFAULT.outputDir+'css',
 			sass: DEFAULT.appDir + '/sass',
-			image: DEFAULT.outputDir+'images',
-			style: DEFAULT.sassStyle
+			image: DEFAULT.outputDir+'images'
 		})
 		.on('error', gutil.log))
+		.pipe(gulpif( DEFAULT.env === 'production', minifyCSS() ))
 		.pipe(gulp.dest(DEFAULT.outputDir+'css'))
 		.pipe(browserSync.stream());
 });
