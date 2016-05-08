@@ -11,14 +11,20 @@ angular.module('pages').config(['$stateProvider',
 		state('home', {
             url: '/',
             templateUrl: 'views/pages/home.html',
-            controller: 'HomeCtrl',
+            controller: 'PagesCtrl',
             parent: 'defaultLayout'
         })
         .state('checkout', {
             url: '/pages/checkout',
             templateUrl: 'views/pages/checkout.html',
-            controller: 'HomeCtrl',
+            controller: 'PagesCtrl',
             parent: 'defaultLayout'
+        })
+        .state('/admin/pages', {
+            url: '/admin/pages',
+            templateUrl: 'views/pages/admin_index.html',
+            controller: 'PagesCtrl',
+            parent: 'adminLayout'
         });
 	}
 ]);

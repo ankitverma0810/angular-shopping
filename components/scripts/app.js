@@ -16,9 +16,10 @@ angular.element(document).ready(function() {
 });
 
 //jquery functions
-$(window).load(function() {
-	$('li.dropdown a').click(function() {
+/*$(window).load(function() {
+	$('.dropdown-slideToggle').click(function() {
 		$(this).next('.dropdown-menu').slideToggle();
+		$(this).parent().toggleClass('open');
 		return false;
 	});
-});
+});*/

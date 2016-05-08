@@ -4,9 +4,9 @@
             <h3>Categories</h3>
         </div>
 
-        <ul class="nav nav-pills nav-stacked">
-            <li class="dropdown">
-                 <a href="">Men</a>
+        <!-- <ul class="nav nav-pills nav-stacked">
+            <li class="dropdown active">
+                 <a href="" class="dropdown-slideToggle">Men</a>
                  <ul class="dropdown-menu">
                     <li><a href="#">Cute Kittens</a></li>
                     <li><a href="#">Strange Stuff</a></li>
@@ -14,7 +14,7 @@
                  </ul>
             </li>
             <li class="dropdown">
-                <a href="">Women</a>
+                <a href="" class="dropdown-slideToggle">Women</a>
                 <ul class="dropdown-menu">
                     <li><a href="#">Cute Kittens</a></li>
                     <li><a href="#">Strange Stuff</a></li>
@@ -27,11 +27,31 @@
                     <li><a href="#">Cute Kittens</a></li>
                     <li><a href="#">Strange Stuff</a></li>
                     <li><a href="#">Automatic Fails</a></li>
-                 </ul>
+                </ul>
             </li>
             <li><a href="#">Accesories</a></li>
             <li><a href="#">Shoes</a></li>
-        </ul>
+        </ul> -->
+
+        <div ng-controller="SidebarCtrl">
+            <uib-accordion close-others="oneAtATime">
+                <uib-accordion-group is-open="status.open" ng-repeat="category in categories">
+                    <uib-accordion-heading>
+                        <div ng-if="!category.content" ng-click="redirect('/products/'+category.title)">
+                            {{category.title}}
+                        </div>
+
+                        <div ng-if="category.content">
+                            {{category.title}}
+                        </div>
+                    </uib-accordion-heading>
+
+                    <ul class="nav nav-pills nav-stacked"  ng-if="category.content">
+                        <li ng-repeat="link in category.content"><a href="#">{{link}}</a></li>
+                    </ul>
+                </uib-accordion-group>
+            </uib-accordion>
+        </div>
     </div>
 
     <div class="sidebar-section">

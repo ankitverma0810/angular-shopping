@@ -31,7 +31,8 @@ var paths = {
 		'bower_components/angular-cookies/angular-cookies.js',
 		'bower_components/angular-sanitize/angular-sanitize.js',
 		'bower_components/angular-ui-router/release/angular-ui-router.js',
-		'bower_components/angular-bootstrap/ui-bootstrap.js',
+		'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+		'bower_components/angular-animate/angular-animate.js',
 		'bower_components/jquery/dist/jquery.js',
 		'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js'
 	],

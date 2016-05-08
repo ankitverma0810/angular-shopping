@@ -45,7 +45,8 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
                     templateUrl: 'views/elements/admin/footer.html'
                 },
                 'sidebar@adminLayout': {
-                    templateUrl: 'views/elements/admin/sidebar.html'
+                    templateUrl: 'views/elements/admin/sidebar.html',
+                    controller: 'SidebarCtrl'
                 },
                 'alert@adminLayout': {
                     templateUrl: 'views/layouts/alert.html',

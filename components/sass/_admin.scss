@@ -1,5 +1,11 @@
 .admin-container {
 	position: relative;
+	padding-left: 280px;
+
+	h2 {
+		font-size: 2em;
+		margin-bottom: 20px;
+	}
 
 	.login-container {
 		max-width: 400px;
@@ -26,6 +32,78 @@
 		}
 	}
 
+	.admin-header {
+		border-bottom: solid 1px $border-color;
+		padding-bottom: 10px;
+		margin-bottom: 20px;
+
+		a {
+			color: $black;
+			text-decoration: none;
+			img {
+				margin-right: 5px;
+			}
+		}
+
+		ul {
+			li {
+				a {
+					padding: 0px;
+
+					&:hover,
+					&:focus {
+						background: none;
+					}
+				}
+
+				.dropdown-menu {
+					min-width: 190px;
+					background-color: lighten($black, 12%);
+					border-radius: 4px;
+					box-shadow: none;
+					border: 0;
+					top: 120%;
+					padding: 2px 0;
+
+					li {
+						border-bottom: solid 1px darken(#fff, 50%);
+
+						&:last-child {
+							border: 0;
+						}
+
+						&.glyphicon-triangle-top {
+							position: absolute;
+							border: 0;
+							top: -8px;
+							left: 20px;
+						}
+
+						a {
+							padding: 8px 15px;
+							color: darken(#fff, 25%);
+							font-size: 12px;
+
+							&:hover {
+								color: #fff;
+							}
+
+							.glyphicon {
+								margin-right: 5px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.admin-footer {
+		border-top: solid 1px $border-color;
+		padding-top: 15px;
+		font-size: 13px;
+	}
+
 	.left-section {
 		background-color: $black;
 		position: absolute;
@@ -45,18 +123,27 @@
 			font-weight: 700;
 		}
 
-		ul {
+		/*ul {
 			li {
 				border-bottom: solid 1px darken(#fff, 80%);
+				font-size: 12px;
 
 				&.active {
 					a {
-						color: #fff;
 						background: none;
-
 						&:hover,
 						&:focus {
 							background: none;
+							color: darken(#fff, 25%);
+						}
+					}
+
+					.dropdown-menu {
+						display: block;
+						li {
+							a {
+								color: darken(#fff, 25%);
+							}
 						}
 					}
 				}
@@ -95,8 +182,76 @@
 							border-bottom: 0;
 						}
 
+						&.active {
+							a {
+								background: none;
+								color: #fff;
+							}
+						}
+
 						a {
 							padding: 10px 37px;
+						}
+					}
+				}
+			}
+		}*/
+
+		.panel-default {
+			border: 0;
+			background: none;
+			border-bottom: solid 1px darken(#fff, 80%);
+			font-size: 13px;
+			border-radius: 0;
+
+			.panel-heading {
+				background: none;
+
+				.panel-title {
+					a {
+						color: darken(#fff, 25%);
+						font-size: 13px;
+
+						span.glyphicon-th {
+							margin-right: 5px;
+						}
+
+						&:hover,
+						&:focus {
+							text-decoration: none;
+						}
+					}
+				}
+			}
+
+			.panel-body {
+				background-color: lighten($black, 12%);
+				padding: 0;
+				border: 0;
+
+				ul {
+					li {
+						border-bottom: solid 1px darken(#fff, 80%);
+						padding-left: 20px;
+
+						a {
+							color: darken(#fff, 25%);
+
+							&:hover,
+							&:focus {
+								background: none;
+							}
+						}
+
+						&:last-child {
+							border: 0;
+						}
+
+						&.active {
+							a {
+								color: #fff;
+								background: none;
+							}
 						}
 					}
 				}
@@ -106,10 +261,36 @@
 
 	.right-section {
 		position: relative;
-		padding-left: 280px;
 		min-height: 700px;
 		float: left;
 		width: 100%;
 		z-index: 99;
+		padding: 20px;
+	}
+
+	.panel-primary {
+		border-color: $border-color;
+
+		.panel-heading {
+			background: none;
+			color: $black;
+			border-color: $border-color;
+		}
+	}
+
+	.form-group {
+		label {
+			color: lighten($black, 50%);
+			font-size: 12px;
+			font-weight: 300;
+		}
+
+		.form-control {
+			border-color: $border-color;
+		}
+
+		textarea.form-control {
+			min-height: 120px;
+		}
 	}
 }

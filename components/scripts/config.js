@@ -4,7 +4,7 @@
 var ApplicationConfiguration = (function() {
 	// Init module configuration options
 	var applicationModuleName = 'shopping-cart';
-	var applicationModuleVendorDependencies = ['ngCookies',  'ngSanitize',  'ui.router', 'ui.bootstrap'];
+	var applicationModuleVendorDependencies = ['ngCookies',  'ngAnimate', 'ngSanitize',  'ui.router', 'ui.bootstrap'];
 
 	// Add a new vertical module
 	var registerModule = function(moduleName, dependencies) {
