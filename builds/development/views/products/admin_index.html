@@ -1,4 +1,4 @@
-<h2>Pages List</h2>
+<h2>Products List</h2>
 
 <div class="panel panel-primary">
 	<div class="panel-heading clearfix">
@@ -26,35 +26,39 @@
 		</div>
 	</div>
 
-	<div class="panel-body listing-page" ng-init="index()">
+	<div class="panel-body listing-page">
 		<div class="row">
 			<table class="table table-bordered">
 				<thead>
 					<tr>
 						<th>Id</th>
 						<th>Title</th>
+						<th>Image</th>
+						<th>Price</th>
 						<th>Description</th>
 						<th>Action</th>
 					</tr>
 				</thead>
 
 				<tbody>
-					<tr ng-repeat="page in pages">
-						<td>{{page.Page.id}}</td>
-						<td>{{page.Page.title}}</td>
-						<td>{{page.Page.description}}</td>
+					<tr>
+						<td>1</td>
+						<td>Lorem ipsum</td>
+						<td></td>
+						<td>$100.00</td>
+						<td>Lorem ipsum dolor amit</td>
 						<td>
 							<a href="#" class="btn btn-default btn-sm btn-icon icon-left">
 								<i class="glyphicon glyphicon-pencil"></i>
 								Edit
 							</a>
 
-							<a href="#" ng-show="page.Page.status_id === '1'" class="btn btn-danger btn-sm btn-icon icon-left">
+							<a href="#" class="btn btn-danger btn-sm btn-icon icon-left">
 								<i class="glyphicon glyphicon-remove"></i>
 								Deactivate
 							</a>
 
-							<a href="#" ng-show="page.Page.status_id === '2'" class="btn btn-success btn-sm btn-icon icon-left">
+							<a href="#" class="btn btn-success btn-sm btn-icon icon-left">
 								<i class="glyphicon glyphicon-ok"></i>
 								Activate
 							</a>
@@ -87,6 +91,6 @@
 	</div>
 </div>
 
-<a ui-sref="/admin/pages/add" class="btn btn-primary">
-	<i class="glyphicon glyphicon-plus"></i> Add page
+<a ui-sref="/admin/products/add" class="btn btn-primary">
+	<i class="glyphicon glyphicon-plus"></i> Add Product
 </a>

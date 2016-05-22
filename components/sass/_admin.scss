@@ -2,9 +2,15 @@
 	position: relative;
 	padding-left: 280px;
 
+	&.admin-login-container {
+		padding-left: 0;
+		color: $brand-primary;
+	}
+
 	h2 {
 		font-size: 2em;
 		margin-bottom: 20px;
+		color: $brand-primary;
 	}
 
 	.login-container {
@@ -20,7 +26,7 @@
 		}
 
 		a {
-			color: $black;
+			color: $brand-primary;
 		}
 
 		.register-link {
@@ -38,7 +44,7 @@
 		margin-bottom: 20px;
 
 		a {
-			color: $black;
+			color: $brand-primary;
 			text-decoration: none;
 			img {
 				margin-right: 5px;
@@ -58,7 +64,7 @@
 
 				.dropdown-menu {
 					min-width: 190px;
-					background-color: lighten($black, 12%);
+					background-color: $brand-primary;
 					border-radius: 4px;
 					box-shadow: none;
 					border: 0;
@@ -102,10 +108,11 @@
 		border-top: solid 1px $border-color;
 		padding-top: 15px;
 		font-size: 13px;
+		margin-top: 15px;
 	}
 
 	.left-section {
-		background-color: $black;
+		background-color: $brand-primary;
 		position: absolute;
 		left: 0;
 		right: 0;
@@ -123,28 +130,15 @@
 			font-weight: 700;
 		}
 
-		/*ul {
+		ul {
 			li {
 				border-bottom: solid 1px darken(#fff, 80%);
-				font-size: 12px;
+				font-size: 13px;
 
 				&.active {
 					a {
 						background: none;
-						&:hover,
-						&:focus {
-							background: none;
-							color: darken(#fff, 25%);
-						}
-					}
-
-					.dropdown-menu {
-						display: block;
-						li {
-							a {
-								color: darken(#fff, 25%);
-							}
-						}
+						color: #fff;
 					}
 				}
 
@@ -157,25 +151,21 @@
 
 					span.glyphicon-menu-right,
 					span.glyphicon-menu-down {
-						float: right;
 						font-size: 11px;
 					}
 
 					&:hover,
 					&:focus {
 						background: none;
+						text-decoration: none;
 					}
 				}
 
-				.dropdown-menu {
-					position: relative;
-					float: none;
-					border: 0;
-					border-radius: 0;
-					box-shadow: none;
-					padding: 0px;
-					margin: 0px;
-					background-color: lighten($black, 12%);
+				.slideDropdown {
+					background-color: darken($brand-primary, 3%);
+					list-style-type: none;
+					margin: 0;
+					padding: 0;
 
 					li {
 						&:last-child {
@@ -191,67 +181,7 @@
 
 						a {
 							padding: 10px 37px;
-						}
-					}
-				}
-			}
-		}*/
-
-		.panel-default {
-			border: 0;
-			background: none;
-			border-bottom: solid 1px darken(#fff, 80%);
-			font-size: 13px;
-			border-radius: 0;
-
-			.panel-heading {
-				background: none;
-
-				.panel-title {
-					a {
-						color: darken(#fff, 25%);
-						font-size: 13px;
-
-						span.glyphicon-th {
-							margin-right: 5px;
-						}
-
-						&:hover,
-						&:focus {
-							text-decoration: none;
-						}
-					}
-				}
-			}
-
-			.panel-body {
-				background-color: lighten($black, 12%);
-				padding: 0;
-				border: 0;
-
-				ul {
-					li {
-						border-bottom: solid 1px darken(#fff, 80%);
-						padding-left: 20px;
-
-						a {
-							color: darken(#fff, 25%);
-
-							&:hover,
-							&:focus {
-								background: none;
-							}
-						}
-
-						&:last-child {
-							border: 0;
-						}
-
-						&.active {
-							a {
-								color: #fff;
-								background: none;
-							}
+							display: block;
 						}
 					}
 				}
@@ -270,27 +200,127 @@
 
 	.panel-primary {
 		border-color: $border-color;
+		box-shadow: none;
 
 		.panel-heading {
 			background: none;
 			color: $black;
 			border-color: $border-color;
+			padding: 15px;
+			color: $grey-color;
+			font-size: 13px;
+
+			.form-inline {
+				margin-bottom: 0;
+			}
+		}
+
+		.panel-body {
+			&.listing-page {
+				padding-bottom: 0;
+			}
+			
+			.table {
+				margin-top: -15px;
+				margin-bottom: 0;
+			}
 		}
 	}
 
 	.form-group {
 		label {
-			color: lighten($black, 50%);
+			color: $grey-color;
 			font-size: 12px;
 			font-weight: 300;
 		}
 
 		.form-control {
 			border-color: $border-color;
+
+			&:focus {
+				box-shadow: none;
+				border-color: darken($border-color, 15%);
+			}
 		}
 
 		textarea.form-control {
 			min-height: 120px;
+		}
+	}
+
+	.dropdown-right-icon {
+		padding: 0 7px;
+		margin-right: 5px;
+
+		.select-chosen {
+			border-right: solid 1px darken($border-color, 10%);
+			padding: 3px 12px 3px 7px;
+			display: inline-block;
+			margin-right: 5px;
+		}
+	}
+
+	.data-table-container {
+		background-color: $brand-default;
+		padding: 10px 15px;
+
+		.data-table-info {
+			color: $grey-color;
+			font-size: 13px;
+			padding-top: 7px;
+		}
+	}
+
+	.pagination {
+		margin: 0;
+
+		li {
+			&.active {
+				a {
+					background-color: $brand-primary;
+					border-color: $brand-primary;
+					color: #fff;
+				}
+			}
+
+			a {
+				color: $black;
+			}
+		}
+	}
+
+	.table {
+		border: 0;
+		color: $grey-color;
+		font-size: 13px;
+
+		thead {
+			background-color: $brand-default;
+			tr {
+				th {
+					border-bottom: 0;
+
+					&:first-child {
+						border-left: 0;
+					}
+					&:last-child {
+						border-right: 0;
+					}
+				}
+			}
+		}
+
+		tbody {
+			tr {
+				td {
+					&:first-child {
+						border-left: 0;
+					}
+					&:last-child {
+						border-right: 0;
+					}
+				}
+			}
 		}
 	}
 }

@@ -8,7 +8,7 @@ angular.module('dashboard').config(['$stateProvider',
 	function($stateProvider) {
 		// Home state routing
 		$stateProvider.
-		state('dashboard', {
+		state('/admin/dashboard', {
             url: '/admin/dashboard',
             templateUrl: 'views/dashboard/admin_index.html',
             controller: 'DashboardCtrl',

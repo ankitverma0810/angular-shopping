@@ -115,16 +115,6 @@ gulp.task('fonts', function() {
 		.pipe(gulpif( DEFAULT.env === 'production', gulp.dest(DEFAULT.outputDir+'fonts') ));
 });
 
-/** coyp task
-* added this task because cross doamin requests were not working properly
-* so to find a solution created this task
-* after finding the solution for cross domain requests, will delete this task.
-*/
-gulp.task('copy', function() {
-	gulp.src('builds/development/**/*')
-		.pipe(gulp.dest('c:/wamp/www/angular-shopping'));
-});
-
 //app serve and watch task
 gulp.task('serve', function() {
 	browserSync.init({
@@ -136,10 +126,10 @@ gulp.task('serve', function() {
 		}
 	});
 
-	gulp.watch(paths.scripts, ['js', 'copy']);
-	gulp.watch(paths.sass, ['compass', 'copy']);
-	gulp.watch('builds/development/**/*.html', ['html', 'copy']);
-	gulp.watch('builds/development/images/**/*.*', ['images', 'copy']);
+	gulp.watch(paths.scripts, ['js']);
+	gulp.watch(paths.sass, ['compass']);
+	gulp.watch('builds/development/**/*.html', ['html']);
+	gulp.watch('builds/development/images/**/*.*', ['images']);
 });
 
 //test and e2e testing task starts from here
@@ -188,4 +178,4 @@ gulp.task('protractor', ['webdriver_update', 'serve'], function(done) {
 });
 
 //default task
-gulp.task('default', ['fonts', 'html', 'js', 'compass', 'images', 'copy', 'serve']);
+gulp.task('default', ['fonts', 'html', 'js', 'compass', 'images', 'serve']);

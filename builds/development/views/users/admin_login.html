@@ -1,17 +1,19 @@
 <div class="login-container container">
     <h3 class="text-center">Login</h3>
-    <form>
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username">
+    <form name="loginForm" ng-submit="login()" novalidate>
+        <div class="form-group" ng-class="{'has-error': loginForm.email.$invalid && loginForm.email.$touched}">
+            <input type="email" name="email" class="form-control" placeholder="Email" ng-model="user.email" ng-required="true">
+            <span id="helpBlock" class="help-block" ng-show="loginForm.email.$invalid && loginForm.email.$touched">Must be a valid email</span>
         </div>
 
-        <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password">
+        <div class="form-group" ng-class="{'has-error': loginForm.password.$invalid && loginForm.password.$touched}">
+            <input type="password" name="password" placeholder="Password" ng-model="user.password" ng-required="true" class="form-control">
+            <span id="helpBlock" class="help-block" ng-show="loginForm.password.$invalid && loginForm.password.$touched">Password is required</span>
         </div>
 
         <div class="clearfix">
         	<div class="col-md-6">
-        		<button type="submit" class="btn btn-default orange-btn">Login</button>
+                <button type="submit" class="btn btn-default orange-btn" ng-disabled="loginForm.$invalid">Login</button>
         	</div>
         	<div class="col-md-6">
         		<p><a ui-sref="admin/forgotpassword">Lost your password?</a></p>

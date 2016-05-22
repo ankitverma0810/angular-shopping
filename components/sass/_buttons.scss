@@ -1,0 +1,74 @@
+.orange-btn {
+	background-color: $orange;
+	color: #fff;
+	border: 0px;
+	padding: .7em 2em;
+	border-radius: 0px;
+	font-size: 1.1em;
+
+	&:hover {
+		background-color: $black;
+		color: #fff;
+	}
+}
+
+.btn-primary {
+	background-color: $brand-primary;
+	border-color: $brand-primary;
+
+	&:hover,
+	&:focus {
+		background-color: darken($brand-primary, 10%);
+	}
+}
+
+.icon-left {
+	padding: 0 10px 0 40px;
+	margin-right: 5px;
+	position: relative;
+	line-height: 26px;
+	border: 0;
+
+	.glyphicon {
+		padding: 7px 10px 5px 10px;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		border-top-left-radius: 3px;
+		border-bottom-left-radius: 3px;
+	}
+
+	&.btn-default {
+		background-color: $brand-default;
+
+		.glyphicon {
+			margin-right: 10px;
+			background-color: #ccc;
+		}
+	}
+
+	&.btn-danger {
+		.glyphicon {
+			margin-right: 10px;
+			background-color: darken($brand-danger, 20%);
+		}
+	}
+
+	&.btn-success {
+		.glyphicon {
+			margin-right: 10px;
+			background-color: darken($brand-success, 20%);
+		}
+	}
+}
+
+.btn {
+	font-size: 13px;
+
+	.glyphicon {
+		font-size: 10px;
+		font-weight: 100;
+		margin-right: 5px;
+	}
+}

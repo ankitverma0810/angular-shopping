@@ -25,6 +25,12 @@ angular.module('pages').config(['$stateProvider',
             templateUrl: 'views/pages/admin_index.html',
             controller: 'PagesCtrl',
             parent: 'adminLayout'
+        })
+        .state('/admin/pages/add', {
+            url: '/admin/pages/add',
+            templateUrl: 'views/pages/admin_add.html',
+            controller: 'PagesCtrl',
+            parent: 'adminLayout'
         });
 	}
 ]);

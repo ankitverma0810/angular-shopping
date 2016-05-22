@@ -13,6 +13,18 @@ angular.module('products').config(['$stateProvider',
             templateUrl: 'views/products/index.html',
             controller: 'ProductCtrl',
             parent: 'defaultLayout'
+        })
+        .state('/admin/products', {
+            url: '/admin/products',
+            templateUrl: 'views/products/admin_index.html',
+            controller: 'ProductCtrl',
+            parent: 'adminLayout'
+        })
+        .state('/admin/products/add', {
+            url: '/admin/products/add',
+            templateUrl: 'views/products/admin_add.html',
+            controller: 'ProductCtrl',
+            parent: 'adminLayout'
         });
 	}
 ]);

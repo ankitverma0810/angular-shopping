@@ -5,50 +5,51 @@
 		All fields have validation rules
 	</div>
 
-	<div class="panel-body">
-		<div class="form-group">
-			<label>Email</label>
-			<input type="email" class="form-control" name="email">
-		</div>
+	<div class="panel-body" ng-init="init()">
+		<form name="detailForm" ng-submit="add()" novalidate>
+			<div class="form-group" ng-class="{'has-error': detailForm.email.$invalid && detailForm.email.$touched}">
+				<label>Email</label>
+				<input type="email" class="form-control" name="email" placeholder="Email" ng-model="details.email" ng-required="true">
+				<span id="helpBlock" class="help-block" ng-show="detailForm.email.$invalid && detailForm.email.$touched">Must be a valid email</span>
+			</div>
 
-		<div class="form-group">
-			<label>Phone</label>
-			<input type="text" class="form-control" name="phone">
-		</div>
+			<div class="form-group" ng-class="{'has-error': detailForm.host.$invalid && detailForm.host.$touched}">
+				<label>Host</label>
+				<input type="text" class="form-control" name="host" placeholder="Host" ng-model="details.host" ng-required="true">
+				<span id="helpBlock" class="help-block" ng-show="detailForm.host.$invalid && detailForm.host.$touched">Please enter host name</span>
+			</div>
 
-		<div class="form-group">
-			<label>Address</label>
-			<textarea class="form-control" name="address"></textarea>
-		</div>
+			<div class="form-group" ng-class="{'has-error': detailForm.username.$invalid && detailForm.username.$touched}">
+				<label>Username</label>
+				<input type="text" class="form-control" name="username" placeholder="Username" ng-model="details.username" ng-required="true">
+				<span id="helpBlock" class="help-block" ng-show="detailForm.username.$invalid && detailForm.username.$touched">Please enter username</span>
+			</div>
 
-		<div class="form-group">
-			<label>Host</label>
-			<input type="text" class="form-control" name="host">
-		</div>
+			<div class="form-group" ng-class="{'has-error': detailForm.password.$invalid && detailForm.password.$touched}">
+				<label>Password</label>
+				<input type="password" class="form-control" name="password" placeholder="Password" ng-model="details.password" ng-required="true">
+				<span id="helpBlock" class="help-block" ng-show="detailForm.password.$invalid && detailForm.password.$touched">Please enter password</span>
+			</div>
 
-		<div class="form-group">
-			<label>Username</label>
-			<input type="text" class="form-control" name="username">
-		</div>
+			<div class="form-group" ng-class="{'has-error': detailForm.port.$invalid && detailForm.port.$touched}">
+				<label>Port</label>
+				<input type="text" class="form-control" name="port" placeholder="Port" ng-model="details.port" ng-required="true">
+				<span id="helpBlock" class="help-block" ng-show="detailForm.port.$invalid && detailForm.port.$touched">Please enter port</span>
+			</div>
 
-		<div class="form-group">
-			<label>Password</label>
-			<input type="password" class="form-control" name="password">
-		</div>
+			<div class="form-group" ng-class="{'has-error': detailForm.powered_by.$invalid && detailForm.powered_by.$touched}">
+				<label>Powered By</label>
+				<input type="text" class="form-control" name="powered_by" placeholder="Powered by" ng-model="details.powered_by" ng-required="true">
+				<span id="helpBlock" class="help-block" ng-show="detailForm.powered_by.$invalid && detailForm.powered_by.$touched">Please enter powered by</span>
+			</div>
 
-		<div class="form-group">
-			<label>Port</label>
-			<input type="text" class="form-control" name="port">
-		</div>
+			<div class="form-group" ng-class="{'has-error': detailForm.copyright.$invalid && detailForm.copyright.$touched}">
+				<label>Copyright</label>
+				<input type="text" class="form-control" name="copyright" placeholder="Copyright" ng-model="details.copyright" ng-required="true">
+				<span id="helpBlock" class="help-block" ng-show="detailForm.copyright.$invalid && detailForm.copyright.$touched">Please enter powered by</span>
+			</div>
 
-		<div class="form-group">
-			<label>Powered By</label>
-			<input type="text" class="form-control" name="poweredBy">
-		</div>
-
-		<div class="form-group">
-			<label>Copyright</label>
-			<input type="text" class="form-control" name="copyright">
-		</div>
+			<button type="submit" class="btn btn-success" ng-disabled="detailForm.$invalid">Submit</button>
+		</form>
 	</div>
 </div>

@@ -5,6 +5,12 @@ var ApplicationConfiguration = (function() {
 	// Init module configuration options
 	var applicationModuleName = 'shopping-cart';
 	var applicationModuleVendorDependencies = ['ngCookies',  'ngAnimate', 'ngSanitize',  'ui.router', 'ui.bootstrap'];
+	var applicationConstants = {
+		SITENAME: 'Shopping Cart',
+        ROOT: '/',
+        URL: 'http://localhost/angular-shopping-backend',
+        API: '/admin'
+	};
 
 	// Add a new vertical module
 	var registerModule = function(moduleName, dependencies) {
@@ -18,6 +24,7 @@ var ApplicationConfiguration = (function() {
 	return {
 		applicationModuleName: applicationModuleName,
 		applicationModuleVendorDependencies: applicationModuleVendorDependencies,
-		registerModule: registerModule
+		registerModule: registerModule,
+		applicationConstants: applicationConstants
 	};
 })();

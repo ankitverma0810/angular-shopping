@@ -1,23 +1,31 @@
 'use strict';
 
 angular.module('shopping-cart')
-    .factory('alertsManager', ['$rootScope', function($rootScope) {
-    $rootScope.alerts = [];
-    $rootScope.currentMessage = "";
+    .factory('alertsManager', ['$rootScope', '$timeout', function($rootScope, $timeout) {
+        var messageTimer = false,
+            displayDuration = 8000;
 
-    $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams) {
-        $rootScope.currentMessage = $rootScope.alerts.shift() || "";
-    });
+        $rootScope.alertMessage = {};
+        $rootScope.showAlert = false;
 
-    return {
-        addAlert: function(message, type) {
-            $rootScope.alerts.push({type: type, message: message});
-        }
-        /*closeAlert: function(index) {
-          return $rootScope.alerts.splice(index, 1);
-        },
-        clearAlerts: function() {
-            $rootScope.alerts = [];
-        }*/
-    };
-}]);
+        return {
+            addAlert: function(message, type) {
+                if (messageTimer) {
+                    $timeout.cancel(messageTimer);
+                }
+
+                $rootScope.showAlert = true;
+                $rootScope.alertMessage = {type: type, message: message};
+
+                messageTimer = $timeout(function () {
+                    $rootScope.alertMessage = {};
+                    $rootScope.showAlert = false;
+                }, displayDuration);
+            },
+            closeAlert: function() {
+                $rootScope.alertMessage = {};
+                $rootScope.showAlert = false;
+                $timeout.cancel(messageTimer);
+            }
+        };
+    }]);

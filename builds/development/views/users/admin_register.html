@@ -1,20 +1,23 @@
 <div class="login-container container">
     <h3 class="text-center">Create Account</h3>
-    <form>
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username">
+    <form name="registerForm" ng-submit="register()" novalidate>
+        <div class="form-group" ng-class="{'has-error': registerForm.firstname.$invalid && registerForm.firstname.$touched}">
+            <input type="text" name="firstname" class="form-control" placeholder="First Name" ng-model="user.first_name" ng-required="true">
+            <span id="helpBlock" class="help-block" ng-show="registerForm.firstname.$invalid && registerForm.firstname.$touched">Please enter your first name</span>
         </div>
 
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Email">
+        <div class="form-group" ng-class="{'has-error': registerForm.email.$invalid && registerForm.email.$touched}">
+            <input type="email" name="email" class="form-control" placeholder="Email" ng-model="user.email" ng-required="true">
+            <span id="helpBlock" class="help-block" ng-show="registerForm.email.$invalid && registerForm.email.$touched">Must be a valid email</span>
         </div>
 
-        <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password">
+        <div class="form-group" ng-class="{'has-error': registerForm.password.$invalid && registerForm.password.$touched}">
+            <input type="password" name="password" placeholder="Password" ng-model="user.password" ng-required="true" class="form-control">
+            <span id="helpBlock" class="help-block" ng-show="registerForm.password.$invalid && registerForm.password.$touched">Password is required</span>
         </div>
 
         <div class="text-center">
-            <button type="submit" class="btn btn-default orange-btn">Submit</button>
+            <button type="submit" class="btn btn-default orange-btn" ng-disabled="registerForm.$invalid">Submit</button>
         </div>
 
         <hr />
