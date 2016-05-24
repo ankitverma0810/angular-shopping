@@ -21,7 +21,7 @@
 		<div class="pull-right">
 			<div class="form-group form-inline">
 				<label>Search:</label>
-				<input type="text" class="form-control input-sm">
+				<input type="text" class="form-control input-sm" ng-model="query">
 			</div>
 		</div>
 	</div>
@@ -31,15 +31,24 @@
 			<table class="table table-bordered">
 				<thead>
 					<tr>
-						<th>Id</th>
-						<th>Title</th>
-						<th>Description</th>
+						<th ng-click="sort('id')">
+							Id
+							<span class="glyphicon sort-icon" ng-show="sortKey=='id'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+						</th>
+						<th ng-click="sort('title')">
+							Title
+							<span class="glyphicon sort-icon" ng-show="sortKey=='title'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+						</th>
+						<th ng-click="sort('description')">
+							Description
+							<span class="glyphicon sort-icon" ng-show="sortKey=='description'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+						</th>
 						<th>Action</th>
 					</tr>
 				</thead>
 
 				<tbody>
-					<tr ng-repeat="page in pages">
+					<tr ng-repeat="page in pages | filter:query | orderBy:sortKey:reverse">
 						<td>{{page.Page.id}}</td>
 						<td>{{page.Page.title}}</td>
 						<td>{{page.Page.description}}</td>
@@ -49,12 +58,12 @@
 								Edit
 							</a>
 
-							<a href="#" ng-show="page.Page.status_id === '1'" class="btn btn-danger btn-sm btn-icon icon-left">
+							<a href="" ng-show="page.Page.status_id === '1'" class="btn btn-danger btn-sm btn-icon icon-left" ng-click="status(page.Page.id, 2, $index)">
 								<i class="glyphicon glyphicon-remove"></i>
 								Deactivate
 							</a>
 
-							<a href="#" ng-show="page.Page.status_id === '2'" class="btn btn-success btn-sm btn-icon icon-left">
+							<a href="" ng-show="page.Page.status_id === '2'" class="btn btn-success btn-sm btn-icon icon-left" ng-click="status(page.Page.id, 1, $index)">
 								<i class="glyphicon glyphicon-ok"></i>
 								Activate
 							</a>
